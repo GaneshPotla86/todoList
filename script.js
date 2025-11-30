@@ -1,5 +1,5 @@
 let todoItemsContainer=document.getElementById("todoItemsContainer");
-
+let addTodoButton=document.getElementById("addTodoButton");
 let todoList=[
     {
         text:"Learn HTML",
@@ -14,7 +14,10 @@ let todoList=[
         uniqueNo:3
     }
     ];
-
+let todosCount=todoList.length;
+addTodoButton.onclick=function(){
+      onAddTodo();
+};
 function onTodoStatusChange(checkboxId,labelId){
     let checkboxElement=document.getElementById(checkboxId);
     let labelElement=document.getElementById(labelId);
@@ -32,17 +35,18 @@ function createAndAppendTodo(todo){
     todoElement.id=todoId;
     todoElement.classList.add("todo-item-container","d-flex","flex-row");
     todoItemsContainer.appendChild(todoElement);
+    
     let inputElement=document.createElement("input");
     inputElement.type="checkbox";
     inputElement.id=checkboxId;
+    
     inputElement.onclick=function(){
         onTodoStatusChange(checkboxId,labelId);
     }
     inputElement.classList.add("checkbox-input");
     todoElement.appendChild(inputElement);
 
-    let labelContainer=document.createElement("div");
-    
+    let labelContainer=document.createElement("div"); 
     labelContainer.classList.add("label-container","d-flex","flex-row");
     todoElement.appendChild(labelContainer);
 
@@ -59,11 +63,31 @@ function createAndAppendTodo(todo){
 
     let deleteIcon=document.createElement("i");
     deleteIcon.classList.add("far","fa-trash-alt","delete-icon");
+    
     deleteIcon.onclick=function(){
         onDeleteTodo(todoId);
-    }
+    };
     deleteIconContainer.appendChild(deleteIcon);
 }
 for(let todo of todoList){
     createAndAppendTodo(todo);
+}
+function onAddTodo(){
+    let todoUserInput=document.getElementById("todoUserInput");
+    let todoUserInputValue=todoUserInput.value;
+    if(todoUserInputValue===""){
+        alert("Enter valid text");
+        return;
+    }
+
+    todosCount+=1;
+    let newTodo={
+        text:todoUserInputValue,
+        uniqueNo:todosCount
+    };
+    createAndAppendTodo(newTodo);
+    todoUserInput.value="";
+}
+addTodoButton.onclick=function(){
+      onAddTodo();
 }
