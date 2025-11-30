@@ -92,6 +92,9 @@
   padding-right: 20px;
   border-radius: 5px;
 }
+.checked{
+  text-decoration: line-through;
+}
 .delete-icon-container {
   text-align: right;
   width: 18%;
