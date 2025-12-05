@@ -1,36 +1,74 @@
-# 📝 Todo List — Simple & Clean Task Manager
+# Todo Application (JavaScript)
 
-This is a simple and user-friendly **Todo List Application** built using **HTML, CSS, and JavaScript**.  
-It helps users add, delete, and manage daily tasks easily.
+A simple and responsive **Todo List Web Application** built using **HTML, CSS, and JavaScript**.  
+This app allows users to **add, delete, and mark tasks as completed**, and it also **stores tasks in Local Storage** so data will not be lost on page reload.
+
+---
 
 ## 🚀 Features
-- ➕ Add new tasks  
-- 🗑️ Delete tasks  
-- ✔️ Mark tasks as completed  
-- 💾 Saves tasks using LocalStorage  
-- 🧼 Clean and minimal UI  
+- Add new tasks  
+- Delete existing tasks  
+- Mark tasks as completed  
+- Stores data permanently using **LocalStorage**  
+- Responsive UI using **Bootstrap 4**  
+- Clean JavaScript code
 
-## 🛠️ Technologies Used
+---
+
+## 🛠️ Tech Stack
 - HTML5  
 - CSS3  
-- JavaScript (Vanilla JS)
+- Bootstrap 4  
+- JavaScript  
+- LocalStorage
+
+---
 
 ## 📂 Project Structure
-/todoList
+/project-folder
 │── index.html
 │── style.css
 │── script.js
+│── README.md
 
+---
 
-## 🔧 How to Run
-1. Clone the repository  
-   ```bash
-   git clone https://github.com/GaneshPotla86/todoList
-\
-2.Open index.html in your browser
+## 🔧 How to Use
+1. Open **index.html** in any browser.  
+2. Enter a task in the input field.  
+3. Click **Add** to create a task.  
+4. Click checkbox to mark task as **completed**.  
+5. Click the **trash icon** to delete the task.  
+6. Click **Save** to store the todo list in LocalStorage.
 
-3.Start adding your tasks 🚀
+---
 
-⭐ Support
+## 📦 LocalStorage Data Format
+```json
+[
+  {
+    "text": "Learn JavaScript",
+    "uniqueNo": 1,
+    "isChecked": false
+  }
+]
+## 🧩 Main Functions
 
-If you like this project, consider giving it a star ⭐ on GitHub.
+onAddTodo() → Adds a new task
+
+onTodoStatusChange() → Toggles completed status
+
+onDeleteTodo() → Deletes a task
+
+createAndAppendTodo() → UI creation for each task
+
+localStorage.setItem() → Saves data
+
+## 🏁 Run the Project
+
+Just open index.html
+No installation required.
+
+##📜 License
+
+This project is open-source under the MIT License.
